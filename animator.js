@@ -29,6 +29,7 @@ function Animator() {
         const position = ['static','relative'].includes($elem.css('position')) ? 'relative' : $elem.css('position');
         $elem
             .attr('animated','0')
+            .addClass(animation)
             .css({ position: position });
     }
 
