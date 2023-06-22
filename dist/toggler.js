@@ -5,6 +5,16 @@ function Toggler() {
         ready($(trigger), $(target), animationDuration, callback);
     }
 
+    this.resetter = (trigger, target) => {
+        $(trigger).on('click', () => {
+            $(target)
+                .animate({
+                    height: 0,
+                    opacity: 0
+                }, 300);
+        });
+    }
+
     const ready = ($trigger, $target, animationDuration, callback) => {
         $trigger.on('click', () => {
            go($target, animationDuration, callback); 
